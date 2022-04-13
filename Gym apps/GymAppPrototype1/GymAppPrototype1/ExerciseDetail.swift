@@ -13,11 +13,14 @@ struct ExerciseDetail: View {
         Image(systemName: "photo")
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .navigationTitle(Exercises.name)
     }
 }
 
 struct ExerciseDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseDetail(Exercises: testData[0])
+        NavigationView{
+            ExerciseDetail(Exercises: testData[0])
+        }
     }
 }

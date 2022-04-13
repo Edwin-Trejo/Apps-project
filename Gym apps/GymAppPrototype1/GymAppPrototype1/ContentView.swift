@@ -8,28 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
-    var exerciseList: [Exercises] = []
+    @ObservedObject var store: ExerciseStorage
+    
     var body: some View {
         NavigationView{
-            List(exerciseList) { Exercises in
+            List(store.exercise) { Exercises in
                 ExtractedView(Exercises: Exercises)
+                
             }
+            
             .navigationTitle("Exercises")
+            .toolbar{
+                #if os(iOS)
+                EditButton()
+                #endif
+            }
+            Text("Select an Exercise").font(.largeTitle)
+            }
         }
-    }
+    
+        func deleteExercise(offsets: IndexSet){
+            withAnimation{
+                store.exercise.remove(atOffsets: offsets)
+            }
+        }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(exerciseList: testData)
+        ContentView(store: testStore)
     }
 }
+
 
 struct ExtractedView: View {
     var Exercises: Exercises
     var body: some View {
         NavigationLink(destination: ExerciseDetail(Exercises: Exercises )){
             Image(systemName: "photo")
+                
             
             VStack(alignment: .leading) {
                 
