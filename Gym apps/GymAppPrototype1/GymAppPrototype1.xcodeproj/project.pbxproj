@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620578F228069BA500B20706 /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620578F128069BA500B20706 /* ExerciseDetail.swift */; };
 		6279BA612804D372003BD5EF /* GymAppPrototype1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279BA602804D372003BD5EF /* GymAppPrototype1App.swift */; };
 		6279BA632804D372003BD5EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279BA622804D372003BD5EF /* ContentView.swift */; };
 		6279BA652804D374003BD5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6279BA642804D374003BD5EF /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620578F128069BA500B20706 /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
 		6279BA5D2804D372003BD5EF /* GymAppPrototype1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymAppPrototype1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6279BA602804D372003BD5EF /* GymAppPrototype1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype1App.swift; sourceTree = "<group>"; };
 		6279BA622804D372003BD5EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				6279BA622804D372003BD5EF /* ContentView.swift */,
 				6279BA642804D374003BD5EF /* Assets.xcassets */,
 				6279BA662804D374003BD5EF /* Preview Content */,
+				620578F128069BA500B20706 /* ExerciseDetail.swift */,
 			);
 			path = GymAppPrototype1;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				6279BA632804D372003BD5EF /* ContentView.swift in Sources */,
 				62C9E5A62806802200D4F0B5 /* Exercises.swift in Sources */,
+				620578F228069BA500B20706 /* ExerciseDetail.swift in Sources */,
 				6279BA612804D372003BD5EF /* GymAppPrototype1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

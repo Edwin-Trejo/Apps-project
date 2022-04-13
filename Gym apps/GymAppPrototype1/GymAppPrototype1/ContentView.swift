@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var exercise: [Exercises] = []
+    var exerciseList: [Exercises] = []
     var body: some View {
         NavigationView{
-            List(exercise) { Exercises in
-                    NavigationLink(destination: Text(Exercises.name)){
-                    Image(systemName: "photo")
-                
-                    VStack(alignment: .leading) {
-                    
-                        Text(Exercises.name)
-                        Text(Exercises.Description) .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                }
+            List(exerciseList) { Exercises in
+                ExtractedView(Exercises: Exercises)
             }
             .navigationTitle("Exercises")
         }
@@ -30,6 +21,22 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(exercise: testData)
+        ContentView(exerciseList: testData)
+    }
+}
+
+struct ExtractedView: View {
+    var Exercises: Exercises
+    var body: some View {
+        NavigationLink(destination: ExerciseDetail(Exercises: Exercises )){
+            Image(systemName: "photo")
+            
+            VStack(alignment: .leading) {
+                
+                Text(Exercises.name)
+                Text(Exercises.Description) .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
     }
 }
