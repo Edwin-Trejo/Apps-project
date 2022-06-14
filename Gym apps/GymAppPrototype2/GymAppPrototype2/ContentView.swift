@@ -9,26 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
+        TabView {       //Navigation bar/tab
             Home()
-                .tabItem() {
+                .tabItem() {        //Home view
                     Image(systemName: "house")
                     Text("Home")
                 }
             Exercises()
-                .tabItem() {
+                .tabItem() {        //Exercises view
                     Image(systemName: "figure.walk")
                     Text("Exercises")
                 }
         
             Calendar()
-                .tabItem() {
+                .tabItem() {        //Calendar view
                     Image(systemName: "calendar")
                     Text("Calendar")
                 }
         
             Settings()
-                .tabItem() {
+                .tabItem() {        //Settings view
                     Image(systemName: "gear")
                     Text("Settings")
                 }
