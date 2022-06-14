@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GymAppPrototype2App: App {
+    @StateObject private var store = ExerciseStorage()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: store)
+            Exercises(store: store)
         }
     }
 }
