@@ -9,27 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var store: ExerciseStorage
-    
     var body: some View {
+        TabView {
+            home()
+                .tabItem() {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+        }
         NavigationView{
             List(store.exercise) { Exercises in
                 ExtractedView(Exercises: Exercises)
-                
             }
-            
             .navigationTitle("Exercises")
             .toolbar{
                 #if os(iOS)
                 EditButton()
                 #endif
             }
+            
             Text("Select an Exercise").font(.largeTitle)
-            }
-        }
-    
-        func deleteExercise(offsets: IndexSet){
-            withAnimation{
-                store.exercise.remove(atOffsets: offsets)
             }
         }
 }

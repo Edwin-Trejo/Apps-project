@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct GymAppPrototype1App: App {
     @StateObject private var store = ExerciseStorage()
+
     
     var body: some Scene {
         WindowGroup {

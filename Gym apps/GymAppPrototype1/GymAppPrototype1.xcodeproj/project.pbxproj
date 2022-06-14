@@ -17,6 +17,7 @@
 		6279BA7C2804D374003BD5EF /* GymAppPrototype1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279BA7B2804D374003BD5EF /* GymAppPrototype1UITests.swift */; };
 		6279BA7E2804D374003BD5EF /* GymAppPrototype1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279BA7D2804D374003BD5EF /* GymAppPrototype1UITestsLaunchTests.swift */; };
 		62C9E5A62806802200D4F0B5 /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C9E5A52806802200D4F0B5 /* Exercises.swift */; };
+		62E6693528590B0C00E6938A /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6693428590B0C00E6938A /* home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		6279BA7B2804D374003BD5EF /* GymAppPrototype1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype1UITests.swift; sourceTree = "<group>"; };
 		6279BA7D2804D374003BD5EF /* GymAppPrototype1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		62C9E5A52806802200D4F0B5 /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
+		62E6693428590B0C00E6938A /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				6279BA662804D374003BD5EF /* Preview Content */,
 				620578F128069BA500B20706 /* ExerciseDetail.swift */,
 				620578F328074AA200B20706 /* ExerciseStorage.swift */,
+				62E6693428590B0C00E6938A /* home.swift */,
 			);
 			path = GymAppPrototype1;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62E6693528590B0C00E6938A /* home.swift in Sources */,
 				6279BA632804D372003BD5EF /* ContentView.swift in Sources */,
 				62C9E5A62806802200D4F0B5 /* Exercises.swift in Sources */,
 				620578F228069BA500B20706 /* ExerciseDetail.swift in Sources */,
