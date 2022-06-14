@@ -14,6 +14,10 @@
 		62E6698A2859164A00E6938A /* GymAppPrototype2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669892859164A00E6938A /* GymAppPrototype2Tests.swift */; };
 		62E669942859164A00E6938A /* GymAppPrototype2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669932859164A00E6938A /* GymAppPrototype2UITests.swift */; };
 		62E669962859164A00E6938A /* GymAppPrototype2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669952859164A00E6938A /* GymAppPrototype2UITestsLaunchTests.swift */; };
+		62E669A42859185C00E6938A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669A32859185C00E6938A /* Home.swift */; };
+		62E669A628591A0B00E6938A /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669A528591A0B00E6938A /* Exercises.swift */; };
+		62E669A828591A1800E6938A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669A728591A1800E6938A /* Settings.swift */; };
+		62E669AA28591A2900E6938A /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669A928591A2900E6938A /* Calendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		62E6698F2859164A00E6938A /* GymAppPrototype2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymAppPrototype2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E669932859164A00E6938A /* GymAppPrototype2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype2UITests.swift; sourceTree = "<group>"; };
 		62E669952859164A00E6938A /* GymAppPrototype2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		62E669A32859185C00E6938A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		62E669A528591A0B00E6938A /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
+		62E669A728591A1800E6938A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		62E669A928591A2900E6938A /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		62E669772859164500E6938A /* GymAppPrototype2 */ = {
 			isa = PBXGroup;
 			children = (
+				62E669A22859184600E6938A /* Views */,
 				62E669782859164500E6938A /* GymAppPrototype2App.swift */,
 				62E6697A2859164500E6938A /* ContentView.swift */,
 				62E6697C2859164A00E6938A /* Assets.xcassets */,
@@ -125,6 +134,17 @@
 				62E669952859164A00E6938A /* GymAppPrototype2UITestsLaunchTests.swift */,
 			);
 			path = GymAppPrototype2UITests;
+			sourceTree = "<group>";
+		};
+		62E669A22859184600E6938A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				62E669A32859185C00E6938A /* Home.swift */,
+				62E669A528591A0B00E6938A /* Exercises.swift */,
+				62E669A728591A1800E6938A /* Settings.swift */,
+				62E669A928591A2900E6938A /* Calendar.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				62E6697B2859164500E6938A /* ContentView.swift in Sources */,
+				62E669AA28591A2900E6938A /* Calendar.swift in Sources */,
+				62E669A628591A0B00E6938A /* Exercises.swift in Sources */,
+				62E669A42859185C00E6938A /* Home.swift in Sources */,
 				62E669792859164500E6938A /* GymAppPrototype2App.swift in Sources */,
+				62E669A828591A1800E6938A /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
