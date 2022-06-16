@@ -1,2 +1,2 @@
 # Apps-project
-Repo with prototypes and personal apps projects
+This repository contains personal projects such as apps and prototypes of apps
