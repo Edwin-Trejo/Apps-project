@@ -8,24 +8,68 @@
 import SwiftUI
 
 struct Home: View {
+    @State var buttonText = ""
+    
     var body: some View {
         NavigationView{
             ZStack{
-                VStack(spacing: 10) {
+                VStack() {
                     Text(Date(),style: .date)
                         .fontWeight(.light)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     Text("My stats:")
                         .font(.title)
-                        .fontWeight(.light)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    Text("Age")
-                    Text("weight/height")
+                    
+                    /*
+                    TextField("Weight", text: $buttonText)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button(self.buttonText){
+                    
+                    } */
+                    HStack(){
+                        Text("Age")
+                            .font(.title) .fontWeight(.light)
+                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                        Button(action: {
+                            print("Testing")
+                        }, label: {
+                            Text("Update")
+                                .foregroundColor(.white)
+                                .padding(.vertical,5)
+                                .padding(.horizontal,5)
+                                .background(
+                                    Color.blue
+                                        .cornerRadius(10)
+                                        .shadow(radius: 10))
+                        }) .padding(.horizontal)
+                    }
+                                
+                    HStack(){   //Hstack containing Weight, and button to update current weight
+                        Text("Weight: ")
+                            .font(.title) .fontWeight(.light)
+                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                        Button(action: {
+                            print("Testing")
+                        }, label: {
+                            Text("Update")
+                                .foregroundColor(.white)
+                                .padding(.vertical,5)
+                                .padding(.horizontal,5)
+                                .background(
+                                    Color.blue
+                                        .cornerRadius(10)
+                                        .shadow(radius: 10))
+                        }) . padding(.horizontal)
+                        
+                    }
+                
+                    
                     Text("Goal:")
                         .font(.title)
-                        .fontWeight(.light)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     Text("Weight")

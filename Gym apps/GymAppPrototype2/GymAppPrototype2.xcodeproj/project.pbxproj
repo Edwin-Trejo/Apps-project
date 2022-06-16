@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62125DB7285BBB7F008E2518 /* HomeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62125DB6285BBB7E008E2518 /* HomeFunctions.swift */; };
 		62E669792859164500E6938A /* GymAppPrototype2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669782859164500E6938A /* GymAppPrototype2App.swift */; };
 		62E6697B2859164500E6938A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6697A2859164500E6938A /* ContentView.swift */; };
 		62E6697D2859164A00E6938A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E6697C2859164A00E6938A /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62125DB6285BBB7E008E2518 /* HomeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFunctions.swift; sourceTree = "<group>"; };
 		62E669752859164500E6938A /* GymAppPrototype2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymAppPrototype2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E669782859164500E6938A /* GymAppPrototype2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype2App.swift; sourceTree = "<group>"; };
 		62E6697A2859164500E6938A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62125DB3285BBB24008E2518 /* Home methods */ = {
+			isa = PBXGroup;
+			children = (
+				62125DB6285BBB7E008E2518 /* HomeFunctions.swift */,
+			);
+			path = "Home methods";
+			sourceTree = "<group>";
+		};
 		62E6696C2859164500E6938A = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		62E669A22859184600E6938A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				62125DB3285BBB24008E2518 /* Home methods */,
 				62E669A32859185C00E6938A /* Home.swift */,
 				62E669A528591A0B00E6938A /* Exercises.swift */,
 				62E669A728591A1800E6938A /* Settings.swift */,
@@ -280,6 +291,7 @@
 				62E6697B2859164500E6938A /* ContentView.swift in Sources */,
 				62E669AA28591A2900E6938A /* Calendar.swift in Sources */,
 				62E669A628591A0B00E6938A /* Exercises.swift in Sources */,
+				62125DB7285BBB7F008E2518 /* HomeFunctions.swift in Sources */,
 				62E669A42859185C00E6938A /* Home.swift in Sources */,
 				62E669792859164500E6938A /* GymAppPrototype2App.swift in Sources */,
 				62E669A828591A1800E6938A /* Settings.swift in Sources */,
