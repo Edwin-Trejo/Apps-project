@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Home: View {
     @State var buttonText = ""
+    @State var newWeight = ""
+    @State var newAge: String = "1"
     
     var body: some View {
         NavigationView{
@@ -23,19 +25,16 @@ struct Home: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     
-                    /*
-                    TextField("Weight", text: $buttonText)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Button(self.buttonText){
-                    
-                    } */
-                    HStack(){
+                    HStack(){  //Hstack containing Age, and button to update Age
                         Text("Age")
                             .font(.title) .fontWeight(.light)
                             .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(newAge)
+                        
                         Button(action: {
-                            print("Testing")
+                            //TODO
+                            self.newAge = "10"
+                            
                         }, label: {
                             Text("Update")
                                 .foregroundColor(.white)
@@ -53,7 +52,9 @@ struct Home: View {
                             .font(.title) .fontWeight(.light)
                             .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
                         Button(action: {
-                            print("Testing")
+                            
+                            //TODO
+                            
                         }, label: {
                             Text("Update")
                                 .foregroundColor(.white)
@@ -75,7 +76,6 @@ struct Home: View {
                     Text("Weight")
                     Text("Today's Workout:")
                         .font(.title)
-                        .fontWeight(.light)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     Spacer()
