@@ -33,7 +33,8 @@ struct Home: View {
                         
                         Button(action: {
                             //TODO
-                            self.newAge = "10"
+                            
+                                
                             
                         }, label: {
                             Text("Update")
@@ -74,6 +75,7 @@ struct Home: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     Text("Weight")
+                    
                     Text("Today's Workout:")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -85,6 +87,8 @@ struct Home: View {
         }
     }
 }
+
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
