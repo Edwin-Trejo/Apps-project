@@ -63,6 +63,7 @@ struct Home: View {
                         
                         //TODO
                         // Changable Var containing Weight
+                            
                         
                     }
                 
