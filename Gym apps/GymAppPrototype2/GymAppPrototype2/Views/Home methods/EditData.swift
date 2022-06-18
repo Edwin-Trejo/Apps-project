@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct EditAge: View {
+struct EditData: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct EditAge_Previews: PreviewProvider {
+struct EditData_Previews: PreviewProvider {
     static var previews: some View {
-        EditAge()
+        EditData()
     }
 }

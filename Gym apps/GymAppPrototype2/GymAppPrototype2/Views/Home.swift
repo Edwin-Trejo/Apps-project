@@ -20,16 +20,12 @@ struct Home: View {
                         .fontWeight(.light)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    Text("My stats:")
-                        .font(.title)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                    
-                    HStack(){  //Hstack containing Age, and button to update Age
-                        Text("Age")
-                            .font(.title) .fontWeight(.light)
-                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
-                        Text(newAge)
+                    HStack(){      //Hstack with My stats and update button
+
+                        Text("My stats:")
+                            .font(.title)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
                         
                         Button(action: {
                             //TODO
@@ -37,45 +33,70 @@ struct Home: View {
                                 
                             
                         }, label: {
-                            Text("Update")
+                            Text("Edit")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
                                 .padding(.horizontal,5)
                                 .background(
-                                    Color.blue
+                                    Color(red: 0.2, green: 1.0, blue: 0.4)
                                         .cornerRadius(10)
                                         .shadow(radius: 10))
                         }) .padding(.horizontal)
                     }
+                    HStack(){  //Hstack containing Age
+                        Text("Age")
+                            .font(.title) .fontWeight(.light)
+                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        //Temporary
+                        Text(newAge).padding(.horizontal)
+                        
+                        //TODO
+                        //Changable Var containing Age
+                        
+                    }
                                 
-                    HStack(){   //Hstack containing Weight, and button to update current weight
+                    HStack(){   //Hstack containing Weight
                         Text("Weight: ")
                             .font(.title) .fontWeight(.light)
                             .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        //TODO
+                        // Changable Var containing Weight
+                        
+                    }
+                
+                    HStack(){
+                        Text("Goal:")
+                            .font(.title)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                        
                         Button(action: {
-                            
                             //TODO
                             
+                                
+                            
                         }, label: {
-                            Text("Update")
+                            Text("Edit")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
                                 .padding(.horizontal,5)
                                 .background(
-                                    Color.blue
+                                    Color(red: 0.2, green: 1.0, blue: 0.4)
                                         .cornerRadius(10)
                                         .shadow(radius: 10))
-                        }) . padding(.horizontal)
+                        }) .padding(.horizontal)
+                    }
+                    HStack(){   //Hstack containing Weight
+                        Text("Weight: ")
+                            .font(.title) .fontWeight(.light)
+                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        //TODO
+                        // Changable Var containing Weight
                         
                     }
-                
-                    
-                    Text("Goal:")
-                        .font(.title)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                    Text("Weight")
-                    
                     Text("Today's Workout:")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
