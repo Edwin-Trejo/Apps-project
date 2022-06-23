@@ -12,6 +12,7 @@ struct Home: View {
     //Saves variable in AppStorage, if no data var = 0
     @AppStorage("weight") var currentUserWeight: Double = 0
     @AppStorage("age") var currentUserAge: Double = 0
+    @AppStorage("goalWeight") var goalUserWeight: Double = 0
     
     @State var buttonText = ""
     @State var newWeight = ""
@@ -32,6 +33,10 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
                         
+                       // NavigationLink("EDIT", destination: HomeEdit)
+                    
+                        
+                        
                         Button(action: {
                             //TODO
                             
@@ -41,37 +46,22 @@ struct Home: View {
                             Text("Edit")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
-                                .padding(.horizontal,5)
+                                .padding(.horizontal,10)
                                 .background(
                                     Color(red: 0.2, green: 1.0, blue: 0.4)
                                         .cornerRadius(10)
                                         .shadow(radius: 10))
                         }) .padding(.horizontal)
                     }
-                    HStack(){  //Hstack containing Age
-                        Text("Age")
-                            .font(.title) .fontWeight(.light)
-                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text("Age: \(String(format: "%.0f", currentUserAge))")
+                        .font(.title) .fontWeight(.light)
+                        .padding(.horizontal)
+                
+                    Text("Weight: \(String(format: "%.0f", currentUserWeight))")
+                        .font(.title) .fontWeight(.light)
+                        .padding(.horizontal)
                         
-                        //Temporary
-                        Text(newAge)
-                            .padding(.horizontal)
-                        
-                        //TODO
-                        //Changable Var containing Age
-                        
-                    }
-                                
-                    HStack(){   //Hstack containing Weight
-                        Text("Weight: ")
-                            .font(.title) .fontWeight(.light)
-                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        //TODO
-                        // Changable Var containing Weight
-                            
-                        
-                    }
                 
                     HStack(){
                         Text("Goal:")
@@ -88,22 +78,19 @@ struct Home: View {
                             Text("Edit")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
-                                .padding(.horizontal,5)
+                                .padding(.horizontal,10)
                                 .background(
                                     Color(red: 0.2, green: 1.0, blue: 0.4)
                                         .cornerRadius(10)
                                         .shadow(radius: 10))
                         }) .padding(.horizontal)
                     }
-                    HStack(){   //Hstack containing Weight
-                        Text("Weight: ")
-                            .font(.title) .fontWeight(.light)
-                            .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text("Weight: \(String(format: "%.0f", goalUserWeight))")
+                        .font(.title) .fontWeight(.light)
+                        .padding(.horizontal)
                         
-                        //TODO
-                        // Changable Var containing Weight
-                        
-                    }
+                    
                     Text("Today's Workout:")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
