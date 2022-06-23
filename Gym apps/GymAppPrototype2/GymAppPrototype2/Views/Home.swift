@@ -7,7 +7,12 @@
 
 import SwiftUI
 
+
 struct Home: View {
+    //Saves variable in AppStorage, if no data var = 0
+    @AppStorage("weight") var currentUserWeight: Double = 0
+    @AppStorage("age") var currentUserAge: Double = 0
+    
     @State var buttonText = ""
     @State var newWeight = ""
     @State var newAge: String = "1"
@@ -49,7 +54,8 @@ struct Home: View {
                             .padding(.horizontal) .frame(maxWidth: .infinity, alignment: .leading)
                         
                         //Temporary
-                        Text(newAge).padding(.horizontal)
+                        Text(newAge)
+                            .padding(.horizontal)
                         
                         //TODO
                         //Changable Var containing Age
@@ -117,3 +123,5 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+
+
