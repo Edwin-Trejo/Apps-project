@@ -14,9 +14,6 @@ struct Home: View {
     @AppStorage("age") var currentUserAge: Double = 0
     @AppStorage("goalWeight") var goalUserWeight: Double = 0
     
-    @State var buttonText = ""
-    @State var newWeight = ""
-    @State var newAge: String = "1"
     
     var body: some View {
         NavigationView{
@@ -33,7 +30,9 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
                         
-                       // NavigationLink("EDIT", destination: HomeEdit)
+//                        NavigationLink(destination: HomeEdit1(home: Home), label: {
+//                            Text("EDIT")
+//                        })
                     
                         
                         
@@ -102,6 +101,59 @@ struct Home: View {
         }
     }
 }
+
+
+
+
+struct HomeEdit1: View {
+    var home : Home
+    var body: some View {
+            VStack(spacing: 10){
+                Text("What's your age?")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+            
+                Text("\(String(format: "%.0f", home.currentUserAge))")
+                    .font(.largeTitle)
+                Slider(value: home.$currentUserAge, in: 14...100, step: 1)
+                    .accentColor(.green)
+                
+                Text("What's your weight?")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+
+                Text("Weight(Lbs): \(String(format: "%.0f", home.currentUserWeight))")
+                
+                Picker("", selection: home.$currentUserWeight){
+                    ForEach(60...400, id: \.self){
+                        Text("\($0)") .font(.largeTitle)
+                    }
+                }
+                //Text("Selection: \(String(format: "%.0f", home.currentUserWeight))")
+                
+                Button(action: {
+                    //TODO
+                    
+                        
+                    
+                }, label: {
+                    
+                    Text("SAVE")
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(
+                            Color.green
+                                .cornerRadius(10)
+                                .shadow(radius: 10))
+                }) .padding()
+            }
+            .navigationTitle("Edit current data")
+        
+    }
+}
+    
+
+
 
 
 

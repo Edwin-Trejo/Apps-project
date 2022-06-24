@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct HomeEdit: View {
-    @State var newAge: String = ""
-    @State var newWeight: String = ""
-    
-    
+   
     var home : Home
     
     var body: some View {
