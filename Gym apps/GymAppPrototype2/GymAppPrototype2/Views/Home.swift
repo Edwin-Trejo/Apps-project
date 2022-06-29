@@ -5,6 +5,8 @@
 //  Created by Edwin Trejo on 6/14/22.
 //
 
+// Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+
 import SwiftUI
 
 //MARK: - Main Home View
@@ -17,13 +19,14 @@ struct Home: View {
     var body: some View {
         NavigationView{
             ZStack{
-//                RadialGradient(
-//                    gradient: Gradient(colors: [Color.red, Color.blue]),
-//                    center: .center,
-//                    startRadius: 5,
-//                    endRadius: 500
-//                )
-                
+                //Background Color
+                RadialGradient(
+                    gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.9207144806, green: 0.9764705896, blue: 0.8646504583, alpha: 1))]),
+                    center: .topLeading,
+                    startRadius: 5,
+                    endRadius: UIScreen.main.bounds.height
+                ) .ignoresSafeArea()
+                //Home page view
                 VStack() {
                     Text(Date(),style: .date)
                         .fontWeight(.light)
@@ -111,6 +114,16 @@ struct HomeEdit: View {
     @State var pickerValue1: String = "0"   //var for picker value
     
     var body: some View {
+        ZStack{
+            //Background Color
+            RadialGradient(
+                gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.9207144806, green: 0.9764705896, blue: 0.8646504583, alpha: 1))]),
+                center: .topLeading,
+                startRadius: 5,
+                endRadius: UIScreen.main.bounds.height
+            ) .ignoresSafeArea()
+            
+            //Edit options
             VStack(spacing: 10){
                 Text("What's your age?")
                     .font(.largeTitle)
@@ -160,11 +173,12 @@ struct HomeEdit: View {
                                 .shadow(radius: 10))
                 }) .padding()
             }
-            .alert("Weight and Age Saved!", isPresented: $displayAlert){
+            .alert("Saved!", isPresented: $displayAlert){
                 Button("OK", role: .cancel){}
             }
             .navigationTitle("Edit current data")
         
+        }
     }
 }
     
