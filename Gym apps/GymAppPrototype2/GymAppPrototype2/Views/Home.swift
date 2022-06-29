@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+private var weight: Double = 0
+private var age: Double = 0
 
 struct Home: View {
     //Saves variable in AppStorage, if no data var = 0
-    @AppStorage("weight") var currentUserWeight: Double = 0
-    @AppStorage("age") var currentUserAge: Double = 0
-    @AppStorage("goalWeight") var goalUserWeight: Double = 0
+    @AppStorage("weight") static var currentUserWeight: Double = 0
+    @AppStorage("age") static var currentUserAge: Double = 0
+    @AppStorage("goalWeight") static var goalUserWeight: Double = 0
     
+    static var something = "someString"
     
     var body: some View {
         NavigationView{
@@ -30,14 +33,15 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
                         
-//                        NavigationLink(destination: HomeEdit1(home: Home), label: {
-//                            Text("EDIT")
-//                        })
-                    
+                        NavigationLink(destination: HomeEdit1(), label: {
+                            Text("EDIT")
+                        })
+                        
                         
                         
                         Button(action: {
-                            //TODO
+                            
+                            
                             
                                 
                             
@@ -53,11 +57,11 @@ struct Home: View {
                         }) .padding(.horizontal)
                     }
                     
-                    Text("Age: \(String(format: "%.0f", currentUserAge))")
+                    Text("Age: \(String(format: "%.0f", Home.currentUserAge))")
                         .font(.title) .fontWeight(.light)
                         .padding(.horizontal)
                 
-                    Text("Weight: \(String(format: "%.0f", currentUserWeight))")
+                    Text("Weight: \(String(format: "%.0f", Home.currentUserWeight))")
                         .font(.title) .fontWeight(.light)
                         .padding(.horizontal)
                         
@@ -69,7 +73,8 @@ struct Home: View {
                             .padding()
                         
                         Button(action: {
-                            //TODO
+                            
+                            //HomeEdit()
                             
                                 
                             
@@ -85,7 +90,7 @@ struct Home: View {
                         }) .padding(.horizontal)
                     }
                     
-                    Text("Weight: \(String(format: "%.0f", goalUserWeight))")
+                    Text("Weight: \(String(format: "%.0f", Home.goalUserWeight))")
                         .font(.title) .fontWeight(.light)
                         .padding(.horizontal)
                         
@@ -106,33 +111,35 @@ struct Home: View {
 
 
 struct HomeEdit1: View {
-    var home : Home
+    //var homeVar : Home
+    
+    
     var body: some View {
             VStack(spacing: 10){
                 Text("What's your age?")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             
-                Text("\(String(format: "%.0f", home.currentUserAge))")
+                Text("\(String(format: "%.0f", Home.currentUserAge))")
                     .font(.largeTitle)
-                Slider(value: home.$currentUserAge, in: 14...100, step: 1)
+                Slider(value: Home.$currentUserAge, in: 14...100, step: 1)
                     .accentColor(.green)
                 
                 Text("What's your weight?")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
 
-                Text("Weight(Lbs): \(String(format: "%.0f", home.currentUserWeight))")
+                Text("Weight(Lbs): \(String(format: "%.0f", Home.currentUserWeight))")
                 
-                Picker("", selection: home.$currentUserWeight){
+                Picker("", selection: Home.$currentUserWeight){
                     ForEach(60...400, id: \.self){
                         Text("\($0)") .font(.largeTitle)
                     }
                 }
-                //Text("Selection: \(String(format: "%.0f", home.currentUserWeight))")
+                //Text("Selection: \(String(format: "%.0f", homeVar.currentUserWeight))")
                 
                 Button(action: {
-                    //TODO
+                    
                     
                         
                     
@@ -160,6 +167,7 @@ struct HomeEdit1: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+        
     }
 }
 
