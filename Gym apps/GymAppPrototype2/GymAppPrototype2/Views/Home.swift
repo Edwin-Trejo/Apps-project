@@ -7,16 +7,12 @@
 
 import SwiftUI
 
-private var weight: Double = 0
-private var age: Double = 0
-
+//MARK: - Main Home View
 struct Home: View {
     //Saves variable in AppStorage, if no data var = 0
-    @AppStorage("weight") static var currentUserWeight: Double = 0
+    @AppStorage("weight") static var currentUserWeight: String = "0"
     @AppStorage("age") static var currentUserAge: Double = 0
-    @AppStorage("goalWeight") static var goalUserWeight: Double = 0
-    
-    static var something = "someString"
+    @AppStorage("goalWeight") static var goalUserWeight: String = "0"
     
     var body: some View {
         NavigationView{
@@ -26,27 +22,16 @@ struct Home: View {
                         .fontWeight(.light)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    HStack(){      //Hstack with My stats and update button
+                    HStack(){      //Hstack with My stats and Edit navigation link
 
                         Text("My stats:")
                             .font(.title)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
                         
+                        //Navigation link to HomeEdit1 view
                         NavigationLink(destination: HomeEdit1(), label: {
                             Text("EDIT")
-                        })
-                        
-                        
-                        
-                        Button(action: {
-                            
-                            
-                            
-                                
-                            
-                        }, label: {
-                            Text("Edit")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
                                 .padding(.horizontal,10)
@@ -55,15 +40,21 @@ struct Home: View {
                                         .cornerRadius(10)
                                         .shadow(radius: 10))
                         }) .padding(.horizontal)
+                        
+                        
+                        
                     }
                     
                     Text("Age: \(String(format: "%.0f", Home.currentUserAge))")
                         .font(.title) .fontWeight(.light)
                         .padding(.horizontal)
-                
-                    Text("Weight: \(String(format: "%.0f", Home.currentUserWeight))")
-                        .font(.title) .fontWeight(.light)
-                        .padding(.horizontal)
+                    HStack(){
+                        Text("Weight:")
+                            .font(.title) .fontWeight(.light)
+                        Text(Home.currentUserWeight)
+                            .font(.title) .fontWeight(.light)
+                    }
+                    
                         
                 
                     HStack(){
@@ -72,14 +63,8 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                         
-                        Button(action: {
-                            
-                            //HomeEdit()
-                            
-                                
-                            
-                        }, label: {
-                            Text("Edit")
+                        NavigationLink(destination: HomeEdit1(), label: {
+                            Text("EDIT")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
                                 .padding(.horizontal,10)
@@ -88,17 +73,20 @@ struct Home: View {
                                         .cornerRadius(10)
                                         .shadow(radius: 10))
                         }) .padding(.horizontal)
+                    
                     }
                     
-                    Text("Weight: \(String(format: "%.0f", Home.goalUserWeight))")
-                        .font(.title) .fontWeight(.light)
-                        .padding(.horizontal)
-                        
-                    
+                    HStack(){
+                        Text("Weight:")
+                            .font(.title) .fontWeight(.light)
+                        Text(Home.goalUserWeight)
+                            .font(.title) .fontWeight(.light)
+                    }
+        
                     Text("Today's Workout:")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
+                        .padding(5)
                     Spacer()
                 }
                 .navigationTitle("Welcome!")
@@ -109,10 +97,13 @@ struct Home: View {
 
 
 
-
+//MARK: - HomeEdit1 View
 struct HomeEdit1: View {
     //var homeVar : Home
-    
+    @State private var displayAlert = false //If true, alert will appear
+    @State var sliderValue1: Double = 0
+    @State var sliderValue2: String = "0"
+    @State var selection: String = "1"
     
     var body: some View {
             VStack(spacing: 10){
@@ -120,28 +111,38 @@ struct HomeEdit1: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             
-                Text("\(String(format: "%.0f", Home.currentUserAge))")
+                Text("\(String(format: "%.0f", sliderValue1))")
                     .font(.largeTitle)
-                Slider(value: Home.$currentUserAge, in: 14...100, step: 1)
+                Slider(value: $sliderValue1, in: 14...100)
                     .accentColor(.green)
                 
                 Text("What's your weight?")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
 
-                Text("Weight(Lbs): \(String(format: "%.0f", Home.currentUserWeight))")
-                
-                Picker("", selection: Home.$currentUserWeight){
-                    ForEach(60...400, id: \.self){
-                        Text("\($0)") .font(.largeTitle)
-                    }
+                HStack(){
+                    Text("Current Weight:")
+                        .fontWeight(.semibold)
+                    Text(sliderValue2)
+                        .fontWeight(.semibold)
                 }
-                //Text("Selection: \(String(format: "%.0f", homeVar.currentUserWeight))")
+ 
+                Picker(
+                    selection: $sliderValue2,
+                    label: Text("Picker"),
+                    content: {
+                        ForEach(60..<300) {number in
+                            Text("\(number)")
+                                .tag("\(number)")
+                                
+                        }
+                    }
+                )
                 
                 Button(action: {
-                    
-                    
-                        
+                    displayAlert = true
+                    Home.currentUserAge = sliderValue1
+                    Home.currentUserWeight = sliderValue2
                     
                 }, label: {
                     
@@ -153,6 +154,9 @@ struct HomeEdit1: View {
                                 .cornerRadius(10)
                                 .shadow(radius: 10))
                 }) .padding()
+            }
+            .alert("Saved!", isPresented: $displayAlert){
+                Button("OK", role: .cancel){}
             }
             .navigationTitle("Edit current data")
         
@@ -167,6 +171,7 @@ struct HomeEdit1: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+        HomeEdit1()
         
     }
 }
