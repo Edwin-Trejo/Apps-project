@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		62125DB7285BBB7F008E2518 /* HomeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62125DB6285BBB7E008E2518 /* HomeFunctions.swift */; };
-		6248AF38285D877300146546 /* HomeEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6248AF37285D877300146546 /* HomeEdit.swift */; };
 		62E669792859164500E6938A /* GymAppPrototype2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E669782859164500E6938A /* GymAppPrototype2App.swift */; };
 		62E6697B2859164500E6938A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6697A2859164500E6938A /* ContentView.swift */; };
 		62E6697D2859164A00E6938A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E6697C2859164A00E6938A /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		62125DB6285BBB7E008E2518 /* HomeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFunctions.swift; sourceTree = "<group>"; };
-		6248AF37285D877300146546 /* HomeEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEdit.swift; sourceTree = "<group>"; };
 		62E669752859164500E6938A /* GymAppPrototype2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymAppPrototype2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E669782859164500E6938A /* GymAppPrototype2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAppPrototype2App.swift; sourceTree = "<group>"; };
 		62E6697A2859164500E6938A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				62125DB6285BBB7E008E2518 /* HomeFunctions.swift */,
-				6248AF37285D877300146546 /* HomeEdit.swift */,
 			);
 			path = "Home methods";
 			sourceTree = "<group>";
@@ -291,7 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6248AF38285D877300146546 /* HomeEdit.swift in Sources */,
 				62E6697B2859164500E6938A /* ContentView.swift in Sources */,
 				62E669AA28591A2900E6938A /* Calendar.swift in Sources */,
 				62E669A628591A0B00E6938A /* Exercises.swift in Sources */,

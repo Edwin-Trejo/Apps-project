@@ -17,6 +17,13 @@ struct Home: View {
     var body: some View {
         NavigationView{
             ZStack{
+//                RadialGradient(
+//                    gradient: Gradient(colors: [Color.red, Color.blue]),
+//                    center: .center,
+//                    startRadius: 5,
+//                    endRadius: 500
+//                )
+                
                 VStack() {
                     Text(Date(),style: .date)
                         .fontWeight(.light)
@@ -29,8 +36,8 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
                         
-                        //Navigation link to HomeEdit1 view
-                        NavigationLink(destination: HomeEdit1(), label: {
+                        //Navigation link to HomeEdit view
+                        NavigationLink(destination: HomeEdit(), label: {
                             Text("EDIT")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
@@ -63,7 +70,7 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                         
-                        NavigationLink(destination: HomeEdit1(), label: {
+                        NavigationLink(destination: HomeEdit(), label: {
                             Text("EDIT")
                                 .foregroundColor(.white)
                                 .padding(.vertical,5)
@@ -97,13 +104,11 @@ struct Home: View {
 
 
 
-//MARK: - HomeEdit1 View
-struct HomeEdit1: View {
-    //var homeVar : Home
+//MARK: - HomeEdit View
+struct HomeEdit: View {
     @State private var displayAlert = false //If true, alert will appear
-    @State var sliderValue1: Double = 0
-    @State var sliderValue2: String = "0"
-    @State var selection: String = "1"
+    @State var sliderValue1: Double = 0     //var for slider1 value
+    @State var pickerValue1: String = "0"   //var for picker value
     
     var body: some View {
             VStack(spacing: 10){
@@ -111,7 +116,7 @@ struct HomeEdit1: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             
-                Text("\(String(format: "%.0f", sliderValue1))")
+                Text("\(String(format: "%.0f", sliderValue1))") //Slider for age selection
                     .font(.largeTitle)
                 Slider(value: $sliderValue1, in: 14...100)
                     .accentColor(.green)
@@ -123,12 +128,12 @@ struct HomeEdit1: View {
                 HStack(){
                     Text("Current Weight:")
                         .fontWeight(.semibold)
-                    Text(sliderValue2)
+                    Text(pickerValue1)
                         .fontWeight(.semibold)
                 }
  
-                Picker(
-                    selection: $sliderValue2,
+                Picker(                         //Picker for weight selection
+                    selection: $pickerValue1,
                     label: Text("Picker"),
                     content: {
                         ForEach(60..<300) {number in
@@ -139,10 +144,10 @@ struct HomeEdit1: View {
                     }
                 )
                 
-                Button(action: {
+                Button(action: {        //Save button
                     displayAlert = true
                     Home.currentUserAge = sliderValue1
-                    Home.currentUserWeight = sliderValue2
+                    Home.currentUserWeight = pickerValue1
                     
                 }, label: {
                     
@@ -155,7 +160,7 @@ struct HomeEdit1: View {
                                 .shadow(radius: 10))
                 }) .padding()
             }
-            .alert("Saved!", isPresented: $displayAlert){
+            .alert("Weight and Age Saved!", isPresented: $displayAlert){
                 Button("OK", role: .cancel){}
             }
             .navigationTitle("Edit current data")
@@ -171,7 +176,7 @@ struct HomeEdit1: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
-        HomeEdit1()
+        HomeEdit()
         
     }
 }
